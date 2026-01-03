@@ -3,674 +3,186 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ZabelTech — Neon Brutal IT Architecture</title>
-  <meta name="description" content="ZabelTech IT Consulting — Miner’s Heritage. Deep Foundations. High Ambition." />
+  <title>ZabelTech — Coming Soon</title>
+  <meta name="description" content="ZabelTech IT Consulting — Neon-Brutal IT Architecture. Coming Soon." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg0:#070312;
-      --bg1:#12062a;
-      --txt:#e9ecff;
-      --muted:rgba(233,236,255,.75);
-      --pink:#ff2bd6;
-      --cyan:#00e5ff;
-      --purple:#7c3cff;
-      --glass: rgba(255,255,255,.06);
-      --glass2: rgba(255,255,255,.10);
-      --border: rgba(255,255,255,.14);
-      --shadow: 0 20px 80px rgba(0,0,0,.55);
-      --r: 18px;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      color:var(--txt);
-      background:
-        radial-gradient(1200px 700px at 70% -10%, rgba(255,43,214,.28), transparent 60%),
-        radial-gradient(900px 600px at 15% 0%, rgba(0,229,255,.18), transparent 55%),
-        radial-gradient(900px 900px at 80% 75%, rgba(124,60,255,.18), transparent 60%),
-        linear-gradient(180deg, var(--bg1), var(--bg0));
-      overflow-x:hidden;
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Rajdhani', sans-serif;
+      color: #ffffff;
+      background: linear-gradient(180deg, #0a0015 0%, #15002a 40%, #200040 70%, #2a0050 100%);
+      overflow: hidden;
+      position: relative;
     }
 
-    a{ color:inherit; text-decoration:none; }
-    .wrap{ max-width:1100px; margin:0 auto; padding:28px 18px 80px; }
-
-    /* --- background "outrun" grid --- */
-    .grid{
-      position:fixed; inset:auto -20% -30% -20%;
-      height:70vh;
-      transform: perspective(900px) rotateX(68deg);
-      transform-origin: bottom center;
-      pointer-events:none;
-      opacity:.35;
-      background-image:
-        linear-gradient(to right, rgba(0,229,255,.18) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255,43,214,.12) 1px, transparent 1px);
-      background-size: 70px 70px, 70px 70px;
-      filter: drop-shadow(0 0 18px rgba(0,229,255,.18));
-    }
-    .grid::after{
-      content:"";
-      position:absolute; inset:0;
-      background: radial-gradient(closest-side at 50% 30%, rgba(255,43,214,.25), transparent 65%);
-      mix-blend-mode: screen;
+    /* Stars */
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
     }
 
-    /* --- top nav --- */
-    header{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:12px;
-      position:relative;
-      z-index:2;
-    }
-    .brand{
-      display:flex; align-items:center; gap:12px;
-      letter-spacing:.5px;
-    }
-    .logo{
-      width:42px; height:42px; border-radius:14px;
-      background:
-        radial-gradient(circle at 30% 30%, rgba(0,229,255,.8), transparent 45%),
-        radial-gradient(circle at 70% 70%, rgba(255,43,214,.8), transparent 50%),
-        linear-gradient(135deg, rgba(255,255,255,.18), rgba(255,255,255,.04));
-      border:1px solid rgba(255,255,255,.2);
-      box-shadow:
-        0 0 20px rgba(0,229,255,.18),
-        0 0 26px rgba(255,43,214,.14);
-    }
-    .brand h1{
-      font-size:18px; margin:0;
-    }
-    nav{
-      display:flex; gap:16px; align-items:center;
-      color:var(--muted);
-      font-size:14px;
-    }
-    nav a{ padding:10px 10px; border-radius:12px; }
-    nav a:hover{ background:rgba(255,255,255,.06); color:var(--txt); }
-
-    /* --- hero --- */
-    .hero{
-      margin-top:28px;
-      display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap:22px;
-      align-items:stretch;
-      position:relative;
-      z-index:2;
-    }
-    @media (max-width: 920px){
-      .hero{ grid-template-columns:1fr; }
+    .star {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 3s ease-in-out infinite;
     }
 
-    .panel{
-      border-radius: var(--r);
-      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.04));
-      border:1px solid var(--border);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-      position:relative;
-    }
-    .panel::before{
-      content:"";
-      position:absolute; inset:-1px;
-      background: linear-gradient(90deg, rgba(255,43,214,.55), rgba(0,229,255,.55), rgba(124,60,255,.55));
-      opacity:.18;
-      filter: blur(22px);
-      pointer-events:none;
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
     }
 
-    .hero-left{ padding:28px 26px 24px; }
-    .badge{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:10px 14px;
-      border-radius:999px;
-      background: rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.14);
-      color:rgba(233,236,255,.92);
-      font-size:12px;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-      box-shadow: 0 0 22px rgba(0,229,255,.10);
-    }
-    .dot{
-      width:10px; height:10px; border-radius:50%;
-      background: var(--cyan);
-      box-shadow: 0 0 12px rgba(0,229,255,.55), 0 0 22px rgba(0,229,255,.25);
+    /* Content */
+    .content {
+      text-align: center;
+      z-index: 10;
+      padding: 20px;
     }
 
-    .headline{
-      margin:18px 0 10px;
-      font-size:54px;
-      line-height:1.02;
-      letter-spacing:-.02em;
-    }
-    @media (max-width: 520px){
-      .headline{ font-size:40px; }
-    }
-    .headline .neon{
-      text-shadow:
-        0 0 12px rgba(255,43,214,.35),
-        0 0 18px rgba(0,229,255,.22);
-    }
-    .sub{
-      margin:0 0 18px;
-      color:rgba(233,236,255,.82);
-      font-size:18px;
-      line-height:1.55;
-      max-width: 56ch;
-    }
-    .sub strong{
-      color:rgba(233,236,255,.96);
-      font-weight:700;
+    .badge {
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      margin-bottom: 20px;
     }
 
-    .cta-row{ display:flex; gap:12px; flex-wrap:wrap; margin-top:18px; }
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:12px 16px;
-      border-radius:14px;
-      font-weight:700;
-      border:1px solid rgba(255,255,255,.18);
-      background: rgba(255,255,255,.06);
-      cursor:pointer;
-      transition: transform .12s ease, filter .12s ease, background .12s ease;
-    }
-    .btn:hover{ transform: translateY(-1px); filter: brightness(1.06); }
-    .btn.primary{
-      background: linear-gradient(90deg, rgba(255,43,214,.95), rgba(0,229,255,.95));
-      color:#05010c;
-      border:0;
-      box-shadow: 0 0 18px rgba(255,43,214,.20), 0 0 18px rgba(0,229,255,.18);
-    }
-    .btn.ghost{
-      border:1px solid rgba(0,229,255,.35);
-      box-shadow: 0 0 18px rgba(0,229,255,.10);
+    .logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(48px, 15vw, 120px);
+      font-weight: 900;
+      background: linear-gradient(180deg, #fff 0%, #00e5ff 25%, #ff00ff 60%, #8000ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 30px rgba(0,229,255,0.4)) drop-shadow(0 0 60px rgba(255,0,255,0.3));
+      line-height: 1.1;
     }
 
-    .mini{
-      margin-top:16px;
-      display:flex; gap:14px; flex-wrap:wrap;
-      color:rgba(233,236,255,.72);
-      font-size:13px;
-    }
-    .mini span{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 10px;
-      border-radius:12px;
-      background: rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.10);
-    }
-    .mini i{
-      width:8px; height:8px; border-radius:50%;
-      background: var(--pink);
-      box-shadow: 0 0 10px rgba(255,43,214,.45);
+    .tagline {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(14px, 3vw, 20px);
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin: 15px 0 40px;
     }
 
-    /* right panel: "mine map" */
-    .hero-right{
-      padding:0;
-      display:flex;
-      flex-direction:column;
-      min-height: 380px;
-    }
-    .map{
-      position:relative;
-      flex:1;
-      padding:18px;
-      overflow:hidden;
-    }
-    .sun{
-      position:absolute;
-      width:240px; height:240px;
-      border-radius:50%;
-      right:-70px; top:-80px;
-      background:
-        radial-gradient(circle at 30% 30%, rgba(255,43,214,.85), rgba(124,60,255,.30) 55%, transparent 70%),
-        radial-gradient(circle at 65% 65%, rgba(0,229,255,.55), transparent 60%);
-      filter: blur(.2px);
-      opacity:.85;
-    }
-    .map svg{
-      width:100%;
-      height:100%;
-      display:block;
-      filter: drop-shadow(0 0 16px rgba(0,229,255,.12));
-    }
-    .map-title{
-      padding:14px 18px 16px;
-      border-top:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.18);
-      display:flex; justify-content:space-between; align-items:center; gap:12px;
-      font-size:13px;
-      color: rgba(233,236,255,.78);
-    }
-    .pill{
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.06);
-      color: rgba(233,236,255,.90);
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      font-size:11px;
+    .coming-soon {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(24px, 6vw, 48px);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 8px;
+      color: #ff00aa;
+      text-shadow: 0 0 20px rgba(255,0,170,0.8), 0 0 40px rgba(255,0,170,0.5), 0 0 80px rgba(255,0,170,0.3);
+      animation: pulse 2s ease-in-out infinite;
     }
 
-    /* marquee strip */
-    .strip{
-      margin:18px 0 0;
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.05);
-      overflow:hidden;
-      box-shadow: 0 0 26px rgba(255,43,214,.06);
-      position:relative;
-      z-index:2;
-    }
-    .strip .inner{
-      display:flex;
-      gap:22px;
-      padding:12px 16px;
-      white-space:nowrap;
-      color:rgba(233,236,255,.78);
-      font-size:13px;
-      animation: scroll 18s linear infinite;
-    }
-    @keyframes scroll{
-      0%{ transform: translateX(0); }
-      100%{ transform: translateX(-50%); }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
     }
 
-    /* sections */
-    section{ margin-top:34px; position:relative; z-index:2; }
-    .h2{
-      margin:0 0 12px;
-      font-size:22px;
-      letter-spacing:.02em;
-    }
-    .lead{
-      margin:0 0 18px;
-      color:rgba(233,236,255,.76);
-      line-height:1.6;
-      max-width: 72ch;
-    }
-
-    .cards{
-      display:grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap:14px;
-    }
-    @media (max-width: 980px){
-      .cards{ grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 520px){
-      .cards{ grid-template-columns: 1fr; }
+    /* Sun */
+    .sun {
+      position: fixed;
+      bottom: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: clamp(200px, 50vw, 400px);
+      height: clamp(200px, 50vw, 400px);
+      border-radius: 50%;
+      background: linear-gradient(180deg, #ffdd00 0%, #ff6600 35%, #ff0066 65%, #aa00aa 100%);
+      box-shadow: 0 0 100px rgba(255,100,0,0.5), 0 0 200px rgba(255,0,100,0.3);
+      z-index: 1;
+      overflow: hidden;
     }
 
-    .card{
-      padding:16px 16px 14px;
-      border-radius: var(--r);
-      background: rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.12);
-      box-shadow: 0 0 26px rgba(0,229,255,.05);
-      position:relative;
-      overflow:hidden;
-      min-height: 150px;
-    }
-    .card::before{
-      content:"";
-      position:absolute;
-      inset:-2px;
-      background: linear-gradient(90deg, rgba(0,229,255,.22), rgba(255,43,214,.18), rgba(124,60,255,.18));
-      opacity:.12;
-      filter: blur(18px);
-      pointer-events:none;
-    }
-    .card h3{
-      margin:0 0 8px;
-      font-size:16px;
-      letter-spacing:.01em;
-    }
-    .card p{
-      margin:0;
-      color:rgba(233,236,255,.74);
-      line-height:1.55;
-      font-size:13.5px;
-    }
-    .icon{
-      width:36px; height:36px; border-radius:14px;
-      display:grid; place-items:center;
-      margin-bottom:10px;
-      background: rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.12);
-      box-shadow: 0 0 18px rgba(255,43,214,.07);
-      font-size:18px;
+    .sun::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 55%;
+      background: repeating-linear-gradient(0deg, transparent 0px, transparent 8px, #0a0015 8px, #0a0015 16px);
     }
 
-    .split{
-      display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap:14px;
-    }
-    @media (max-width: 920px){
-      .split{ grid-template-columns:1fr; }
-    }
-    .box{
-      padding:18px;
-      border-radius: var(--r);
-      background: rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.12);
-      box-shadow: var(--shadow);
-      position:relative;
-      overflow:hidden;
-    }
-    .box::before{
-      content:"";
-      position:absolute; inset:-2px;
-      background: linear-gradient(90deg, rgba(255,43,214,.22), rgba(0,229,255,.18));
-      opacity:.10;
-      filter: blur(22px);
-      pointer-events:none;
+    /* Grid */
+    .grid {
+      position: fixed;
+      bottom: 0;
+      left: -50%;
+      right: -50%;
+      height: 40vh;
+      background: 
+        repeating-linear-gradient(90deg, transparent 0px, transparent 59px, rgba(0,229,255,0.3) 59px, rgba(0,229,255,0.3) 60px),
+        repeating-linear-gradient(0deg, transparent 0px, transparent 39px, rgba(255,0,255,0.2) 39px, rgba(255,0,255,0.2) 40px);
+      transform: perspective(500px) rotateX(60deg);
+      transform-origin: center top;
+      z-index: 2;
     }
 
-    .kpi{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:10px;
-      margin-top:12px;
+    .footer {
+      position: fixed;
+      bottom: 20px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+      z-index: 10;
     }
-    @media (max-width:520px){
-      .kpi{ grid-template-columns:1fr; }
-    }
-    .kpi .stat{
-      padding:12px;
-      border-radius:16px;
-      background: rgba(0,0,0,.18);
-      border:1px solid rgba(255,255,255,.10);
-    }
-    .stat .n{
-      font-size:18px; font-weight:800;
-      text-shadow: 0 0 12px rgba(0,229,255,.18);
-    }
-    .stat .l{
-      margin-top:2px;
-      font-size:12px;
-      color:rgba(233,236,255,.72);
-    }
-
-    /* final CTA */
-    .cta{
-      margin-top:34px;
-      padding:22px;
-      border-radius: 22px;
-      background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.04));
-      border:1px solid rgba(255,255,255,.14);
-      box-shadow: 0 0 40px rgba(255,43,214,.08), 0 0 36px rgba(0,229,255,.07);
-      display:flex; align-items:center; justify-content:space-between;
-      gap:14px; flex-wrap:wrap;
-      position:relative;
-      z-index:2;
-    }
-    .cta h3{ margin:0; font-size:18px; }
-    .cta p{ margin:6px 0 0; color:rgba(233,236,255,.76); max-width:70ch; }
-    footer{
-      margin-top:34px;
-      color:rgba(233,236,255,.55);
-      font-size:12px;
-      display:flex; justify-content:space-between; gap:12px;
-      flex-wrap:wrap;
-      position:relative;
-      z-index:2;
-    }
-
-    /* a11y */
-    .sr{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
   </style>
 </head>
-
 <body>
-  <div class="grid" aria-hidden="true"></div>
-
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <div>
-          <h1>ZabelTech</h1>
-          <div style="color:rgba(233,236,255,.65);font-size:12px;margin-top:2px;">
-            IT Consulting • Architecture • Delivery
-          </div>
-        </div>
-      </div>
-
-      <nav>
-        <a href="#services">Services</a>
-        <a href="#approach">Approach</a>
-        <a href="#proof">Proof</a>
-        <a href="#contact" class="btn ghost" style="padding:10px 12px;">Book a call</a>
-      </nav>
-    </header>
-
-    <main>
-      <div class="hero">
-        <div class="panel hero-left">
-          <div class="badge"><span class="dot"></span> GOSLAR / HARZ • DIGITAL FORGE</div>
-
-          <h2 class="headline">
-            <span class="neon">NEON-BRUTAL</span><br />
-            IT ARCHITECTURE.
-          </h2>
-
-          <p class="sub">
-            <strong>Miner’s Heritage. Deep Foundations. High Ambition.</strong><br />
-            We build production systems that hold under load—mapped, reinforced, and engineered to endure.
-          </p>
-
-          <div class="cta-row">
-            <a class="btn primary" href="#contact">Book a 30-min call</a>
-            <a class="btn ghost" href="#contact">Request an architecture check</a>
-          </div>
-
-          <div class="mini" aria-label="Highlights">
-            <span><i></i> Strategy → Shipping</span>
-            <span><i></i> Performance & Cost Discipline</span>
-            <span><i></i> Security & Governance</span>
-          </div>
-        </div>
-
-        <div class="panel hero-right">
-          <div class="map" aria-label="System map illustration">
-            <div class="sun" aria-hidden="true"></div>
-            <!-- simple "mine map" / service graph -->
-            <svg viewBox="0 0 560 320" role="img" aria-label="Glowing service graph inspired by mine tunnels">
-              <defs>
-                <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0" stop-color="rgba(255,43,214,.95)"/>
-                  <stop offset="0.55" stop-color="rgba(0,229,255,.95)"/>
-                  <stop offset="1" stop-color="rgba(124,60,255,.95)"/>
-                </linearGradient>
-                <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                  <feGaussianBlur stdDeviation="3" result="blur"/>
-                  <feMerge>
-                    <feMergeNode in="blur"/>
-                    <feMergeNode in="SourceGraphic"/>
-                  </feMerge>
-                </filter>
-              </defs>
-
-              <!-- tunnels/edges -->
-              <path d="M70 250 L160 180 L250 210 L330 150 L440 170" stroke="url(#g)" stroke-width="3" fill="none" filter="url(#glow)" opacity="0.9"/>
-              <path d="M160 180 L170 90 L290 80 L330 150" stroke="rgba(0,229,255,.85)" stroke-width="2.5" fill="none" filter="url(#glow)" opacity="0.75"/>
-              <path d="M250 210 L300 260 L420 250" stroke="rgba(255,43,214,.75)" stroke-width="2.5" fill="none" filter="url(#glow)" opacity="0.7"/>
-              <path d="M290 80 L430 70 L440 170" stroke="rgba(124,60,255,.80)" stroke-width="2.5" fill="none" filter="url(#glow)" opacity="0.7"/>
-
-              <!-- nodes -->
-              <g fill="rgba(255,255,255,.10)" stroke="rgba(255,255,255,.35)" stroke-width="1.2" filter="url(#glow)">
-                <circle cx="70" cy="250" r="16"/>
-                <circle cx="160" cy="180" r="16"/>
-                <circle cx="250" cy="210" r="16"/>
-                <circle cx="330" cy="150" r="16"/>
-                <circle cx="440" cy="170" r="16"/>
-                <circle cx="170" cy="90" r="14"/>
-                <circle cx="290" cy="80" r="14"/>
-                <circle cx="430" cy="70" r="14"/>
-                <circle cx="300" cy="260" r="14"/>
-                <circle cx="420" cy="250" r="14"/>
-              </g>
-
-              <!-- labels -->
-              <g font-family="ui-sans-serif, system-ui" font-size="12" fill="rgba(233,236,255,.78)">
-                <text x="40" y="290">Ingest</text>
-                <text x="135" y="225">Auth</text>
-                <text x="228" y="250">Core</text>
-                <text x="305" y="190">API</text>
-                <text x="410" y="210">Edge</text>
-                <text x="142" y="65">Risk</text>
-                <text x="275" y="55">Billing</text>
-                <text x="410" y="45">Observability</text>
-                <text x="280" y="305">Cache</text>
-                <text x="392" y="292">Data</text>
-              </g>
-            </svg>
-          </div>
-
-          <div class="map-title">
-            <span>“Tunnel map” thinking → clean service boundaries</span>
-            <span class="pill">Goslar-inspired</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="strip" aria-label="Marquee">
-        <div class="inner">
-          <span>Strategy</span> • <span>Architecture</span> • <span>Performance</span> • <span>Security</span> • <span>Delivery</span> •
-          <span>no slideware</span> • <span>measurable outcomes</span> • <span>production-grade</span> •
-          <span>Strategy</span> • <span>Architecture</span> • <span>Performance</span> • <span>Security</span> • <span>Delivery</span> •
-          <span>no slideware</span> • <span>measurable outcomes</span> • <span>production-grade</span> •
-        </div>
-      </div>
-
-      <section id="services">
-        <h2 class="h2">What we forge</h2>
-        <p class="lead">
-          We combine long-horizon planning with hands-on delivery—like a mine: survey first, reinforce the weak seams, then build for throughput.
-        </p>
-
-        <div class="cards">
-          <div class="card">
-            <div class="icon" aria-hidden="true">⛏️</div>
-            <h3>Platform & Cloud Architecture</h3>
-            <p>Load-bearing designs: clear domains, stable interfaces, scalable foundations.</p>
-          </div>
-
-          <div class="card">
-            <div class="icon" aria-hidden="true">⚡</div>
-            <h3>Performance Engineering</h3>
-            <p>Find bottlenecks, cut latency, and keep cost-to-serve disciplined.</p>
-          </div>
-
-          <div class="card">
-            <div class="icon" aria-hidden="true">🛡️</div>
-            <h3>Security & Governance</h3>
-            <p>Access models, compliance-ready controls, and threat-aware architecture.</p>
-          </div>
-
-          <div class="card">
-            <div class="icon" aria-hidden="true">🧰</div>
-            <h3>Engineering & Delivery</h3>
-            <p>Migrations, integrations, and production rollouts—clean and observable.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="approach">
-        <h2 class="h2">How we work</h2>
-        <div class="split">
-          <div class="box">
-            <p class="lead" style="margin-bottom:0;">
-              <strong>Survey → Map → Reinforce → Ship.</strong><br/>
-              Goslar’s mining history wasn’t about shortcuts—it was about structure, safety margins, and repeatable execution.
-              We apply the same discipline to modern stacks.
-            </p>
-
-            <div class="kpi" aria-label="Approach highlights">
-              <div class="stat">
-                <div class="n">1</div>
-                <div class="l">System map & risk seams</div>
-              </div>
-              <div class="stat">
-                <div class="n">2</div>
-                <div class="l">Reinforced core boundaries</div>
-              </div>
-              <div class="stat">
-                <div class="n">3</div>
-                <div class="l">Measured, observable delivery</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="box">
-            <h3 style="margin:0 0 10px;">What you get in the first week</h3>
-            <ul style="margin:0; padding-left:18px; color:rgba(233,236,255,.76); line-height:1.7;">
-              <li>A clear architecture snapshot (what talks to what, and why).</li>
-              <li>Top risks and “weak seam” list (security, reliability, scaling).</li>
-              <li>Prioritized next steps with effort/impact.</li>
-              <li>Quick wins you can ship immediately.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="proof">
-        <h2 class="h2">Proof under pressure</h2>
-        <p class="lead">
-          Built for real-world load—not demos.
-        </p>
-
-        <div class="cards" style="grid-template-columns:repeat(3,1fr);">
-          <div class="card">
-            <div class="icon" aria-hidden="true">📈</div>
-            <h3>High-throughput pipelines</h3>
-            <p>Stable under peaks with clear SLOs and clean failure modes.</p>
-          </div>
-          <div class="card">
-            <div class="icon" aria-hidden="true">📜</div>
-            <h3>Audit-ready systems</h3>
-            <p>Controls, traceability, and governance that survive scrutiny.</p>
-          </div>
-          <div class="card">
-            <div class="icon" aria-hidden="true">⏱️</div>
-            <h3>Latency-sensitive services</h3>
-            <p>Measured improvements—not vibes—plus better observability.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact">
-        <div class="cta">
-          <div>
-            <h3>Let’s check what actually holds.</h3>
-            <p>30 minutes. Clear diagnosis. Practical next steps. No fluff.</p>
-          </div>
-          <div class="cta-row" style="margin:0;">
-            <a class="btn primary" href="mailto:hello@yourdomain.com?subject=ZabelTech%20—%20Intro%20Call">Email to book</a>
-            <a class="btn ghost" href="#" onclick="alert('Replace this with your Calendly/booking link.'); return false;">Add booking link</a>
-          </div>
-        </div>
-
-        <footer>
-          <div>© <span id="y"></span> ZabelTech</div>
-          <div>Goslar / Harz • Miner’s Heritage → Future-ready engineering</div>
-        </footer>
-      </section>
-    </main>
+  <div class="stars" id="stars"></div>
+  
+  <div class="content">
+    <div class="badge">Digital Forge • Goslar</div>
+    <h1 class="logo">ZabelTech</h1>
+    <p class="coming-soon">Coming Soon</p>
   </div>
 
+  <div class="sun"></div>
+  <div class="grid"></div>
+
+  <div class="footer">Built to Endure</div>
+
   <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
+    const container = document.getElementById('stars');
+    for (let i = 0; i < 100; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      star.style.cssText = `
+        width: ${Math.random() * 2 + 0.5}px;
+        height: ${Math.random() * 2 + 0.5}px;
+        left: ${Math.random() * 100}%;
+        top: ${Math.random() * 60}%;
+        animation-delay: ${Math.random() * 3}s;
+        animation-duration: ${Math.random() * 2 + 2}s;
+      `;
+      container.appendChild(star);
+    }
   </script>
 </body>
 </html>
