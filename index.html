@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ZabelTech — Neon-Brutal IT Architecture</title>
-  <meta name="description" content="ZabelTech IT Consulting from Goslar/Harz — Deep. Connected. Load-bearing architecture." />
+  <title>ZabelTech — Coming Soon</title>
+  <meta name="description" content="ZabelTech IT Consulting — Neon-Brutal IT Architecture. Coming Soon." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Russo+One&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
@@ -15,20 +15,21 @@
       padding: 0;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       font-family: 'Rajdhani', sans-serif;
       color: #ffffff;
-      background: #0a0018;
-      overflow-x: hidden;
-      line-height: 1.5;
+      background: linear-gradient(180deg, #0a0015 0%, #15002a 40%, #200040 70%, #2a0050 100%);
+      overflow: hidden;
+      position: relative;
     }
 
-    /* ==================== STARS BACKGROUND ==================== */
-    .stars-container {
+    /* Stars */
+    .stars {
       position: fixed;
       top: 0;
       left: 0;
@@ -36,7 +37,6 @@
       height: 100%;
       pointer-events: none;
       z-index: 0;
-      overflow: hidden;
     }
 
     .star {
@@ -51,167 +51,70 @@
       50% { opacity: 1; }
     }
 
-    /* ==================== HERO SECTION ==================== */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 30px 20px 0;
-      background: linear-gradient(180deg, 
-        #0a0018 0%, 
-        #12002a 30%,
-        #1a0035 50%,
-        #200040 70%,
-        #2a0050 100%
-      );
-      overflow: hidden;
-    }
-
-    /* Top Badge */
-    .top-badge {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 2px;
-      color: rgba(255,255,255,0.6);
-      text-transform: uppercase;
-      margin-bottom: 15px;
+    /* Content */
+    .content {
+      text-align: center;
       z-index: 10;
+      padding: 20px;
     }
 
-    .badge-line {
-      width: 60px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    .badge {
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      margin-bottom: 20px;
     }
 
-    /* Chrome Logo */
-    .logo-main {
-      font-family: 'Russo One', 'Orbitron', sans-serif;
-      font-size: clamp(50px, 14vw, 130px);
-      font-weight: 400;
-      line-height: 1;
-      background: linear-gradient(180deg, 
-        #ffffff 0%,
-        #a8e6ff 15%,
-        #00d4ff 30%,
-        #ff00ff 50%,
-        #8000ff 70%,
-        #4400aa 85%,
-        #220066 100%
-      );
+    .logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(48px, 15vw, 120px);
+      font-weight: 900;
+      background: linear-gradient(180deg, #fff 0%, #00e5ff 25%, #ff00ff 60%, #8000ff 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      filter: drop-shadow(0 0 30px rgba(0,212,255,0.4)) drop-shadow(0 0 60px rgba(255,0,255,0.3));
-      z-index: 10;
-      text-align: center;
+      filter: drop-shadow(0 0 30px rgba(0,229,255,0.4)) drop-shadow(0 0 60px rgba(255,0,255,0.3));
+      line-height: 1.1;
     }
 
-    /* Tagline */
     .tagline {
-      font-family: 'Russo One', sans-serif;
-      font-size: clamp(18px, 4vw, 32px);
-      font-weight: 400;
-      color: #ffffff;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin: 15px 0 8px;
-      text-shadow: 0 0 30px rgba(255,0,255,0.6);
-      z-index: 10;
-      text-align: center;
-    }
-
-    .subtitle {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: clamp(13px, 2vw, 16px);
-      font-weight: 400;
-      color: rgba(255,255,255,0.7);
-      font-style: italic;
-      margin-bottom: 25px;
-      z-index: 10;
-      text-align: center;
-    }
-
-    /* CTA Buttons */
-    .cta-buttons {
-      display: flex;
-      gap: 15px;
-      margin-bottom: 30px;
-      z-index: 10;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .btn {
       font-family: 'Orbitron', sans-serif;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 12px 24px;
-      text-decoration: none;
+      font-size: clamp(14px, 3vw, 20px);
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 2px;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      border: none;
+      margin: 15px 0 40px;
     }
 
-    .btn-primary {
-      background: linear-gradient(90deg, #ff00aa, #ff0066);
-      color: white;
-      box-shadow: 0 0 20px rgba(255,0,150,0.5), 0 0 40px rgba(255,0,150,0.3);
+    .coming-soon {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(24px, 6vw, 48px);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 8px;
+      color: #ff00aa;
+      text-shadow: 0 0 20px rgba(255,0,170,0.8), 0 0 40px rgba(255,0,170,0.5), 0 0 80px rgba(255,0,170,0.3);
+      animation: pulse 2s ease-in-out infinite;
     }
 
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 30px rgba(255,0,150,0.7), 0 0 60px rgba(255,0,150,0.4);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: #ffffff;
-      border: 1px solid rgba(255,255,255,0.5);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.1);
-      border-color: rgba(255,255,255,0.8);
-    }
-
-    /* ==================== SYNTHWAVE SCENE ==================== */
-    .synthwave-scene {
-      position: relative;
-      width: 100%;
-      height: 400px;
-      z-index: 5;
-      margin-top: auto;
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
     }
 
     /* Sun */
     .sun {
-      position: absolute;
+      position: fixed;
+      bottom: -100px;
       left: 50%;
       transform: translateX(-50%);
-      bottom: 180px;
-      width: clamp(150px, 30vw, 220px);
-      height: clamp(150px, 30vw, 220px);
+      width: clamp(200px, 50vw, 400px);
+      height: clamp(200px, 50vw, 400px);
       border-radius: 50%;
-      background: linear-gradient(180deg, 
-        #ffdd00 0%,
-        #ffaa00 25%,
-        #ff6600 45%,
-        #ff0066 65%,
-        #cc0088 85%,
-        #8800aa 100%
-      );
-      box-shadow: 
-        0 0 80px rgba(255,100,0,0.6),
-        0 0 150px rgba(255,0,100,0.4);
+      background: linear-gradient(180deg, #ffdd00 0%, #ff6600 35%, #ff0066 65%, #aa00aa 100%);
+      box-shadow: 0 0 100px rgba(255,100,0,0.5), 0 0 200px rgba(255,0,100,0.3);
+      z-index: 1;
       overflow: hidden;
     }
 
@@ -221,767 +124,66 @@
       bottom: 0;
       left: 0;
       right: 0;
-      height: 60%;
-      background: repeating-linear-gradient(
-        0deg,
-        transparent 0px,
-        transparent 6px,
-        #0a0018 6px,
-        #0a0018 12px
-      );
+      height: 55%;
+      background: repeating-linear-gradient(0deg, transparent 0px, transparent 8px, #0a0015 8px, #0a0015 16px);
     }
 
-    /* Wireframe Mountains */
-    .mountains-container {
-      position: absolute;
-      bottom: 120px;
-      left: 0;
-      right: 0;
-      height: 200px;
-      z-index: 6;
-    }
-
-    .mountains-svg {
-      width: 100%;
-      height: 100%;
-    }
-
-    /* Grid Floor */
-    .grid-floor {
-      position: absolute;
+    /* Grid */
+    .grid {
+      position: fixed;
       bottom: 0;
-      left: -100%;
-      right: -100%;
-      height: 180px;
+      left: -50%;
+      right: -50%;
+      height: 40vh;
       background: 
-        repeating-linear-gradient(
-          90deg,
-          transparent 0px,
-          transparent calc(50% - 1px),
-          rgba(0,229,255,0.3) calc(50% - 1px),
-          rgba(0,229,255,0.3) calc(50% + 1px),
-          transparent calc(50% + 1px),
-          transparent 100%
-        ),
-        repeating-linear-gradient(
-          0deg,
-          rgba(255,0,255,0.2) 0px,
-          rgba(255,0,255,0.2) 1px,
-          transparent 1px,
-          transparent 30px
-        );
-      background-size: 60px 100%, 100% 30px;
-      transform: perspective(400px) rotateX(65deg);
+        repeating-linear-gradient(90deg, transparent 0px, transparent 59px, rgba(0,229,255,0.3) 59px, rgba(0,229,255,0.3) 60px),
+        repeating-linear-gradient(0deg, transparent 0px, transparent 39px, rgba(255,0,255,0.2) 39px, rgba(255,0,255,0.2) 40px);
+      transform: perspective(500px) rotateX(60deg);
       transform-origin: center top;
-      z-index: 4;
+      z-index: 2;
     }
 
-    /* Castle */
-    .castle-container {
-      position: absolute;
-      bottom: 130px;
-      right: 5%;
-      width: clamp(120px, 20vw, 200px);
-      height: clamp(100px, 15vw, 160px);
-      z-index: 7;
-      opacity: 0.5;
-    }
-
-    /* ==================== SERVICE STRIP ==================== */
-    .service-strip {
-      width: 100%;
-      padding: 18px 20px;
-      background: rgba(0,0,0,0.4);
-      border-top: 1px dashed rgba(255,255,255,0.25);
-      border-bottom: 1px dashed rgba(255,255,255,0.25);
-      position: relative;
-      z-index: 10;
-    }
-
-    .strip-content {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-      font-family: 'Orbitron', sans-serif;
-      font-size: clamp(9px, 1.5vw, 12px);
-      font-weight: 400;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.75);
-    }
-
-    .strip-dot {
-      color: #ff00aa;
-      font-size: 8px;
-    }
-
-    /* ==================== SERVICES SECTION ==================== */
-    .services {
-      padding: 60px 20px;
-      background: linear-gradient(180deg, #1a0035 0%, #12002a 100%);
-      position: relative;
-      z-index: 10;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    @media (max-width: 900px) {
-      .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 500px) {
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .service-card {
-      background: linear-gradient(180deg, rgba(40,0,80,0.6) 0%, rgba(20,0,40,0.8) 100%);
-      border: 1px solid;
-      border-image: linear-gradient(180deg, rgba(255,0,255,0.5), rgba(0,200,255,0.5)) 1;
-      padding: 25px 20px;
-      text-align: center;
-      position: relative;
-      transition: all 0.3s ease;
-    }
-
-    .service-card::before {
-      content: '';
-      position: absolute;
-      inset: -1px;
-      background: linear-gradient(135deg, 
-        rgba(255,0,255,0.3) 0%, 
-        rgba(0,200,255,0.3) 50%, 
-        rgba(128,0,255,0.3) 100%
-      );
-      z-index: -1;
-      filter: blur(10px);
-      opacity: 0.5;
-    }
-
-    .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(255,0,255,0.2);
-    }
-
-    .service-icon {
-      width: 55px;
-      height: 55px;
-      margin: 0 auto 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 2px solid rgba(255,0,255,0.6);
-      border-radius: 10px;
-      background: rgba(255,0,255,0.1);
-      box-shadow: 0 0 20px rgba(255,0,255,0.3);
-    }
-
-    .service-icon svg {
-      width: 28px;
-      height: 28px;
-      fill: #ff66cc;
-    }
-
-    .service-card h3 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 8px;
-      color: #ffffff;
-      line-height: 1.3;
-    }
-
-    .service-card p {
-      font-size: 13px;
-      color: rgba(255,255,255,0.6);
-      font-style: italic;
-    }
-
-    /* ==================== BUILDERS SECTION ==================== */
-    .builders {
-      padding: 50px 20px 30px;
-      background: linear-gradient(180deg, #12002a 0%, #0a0018 100%);
-      position: relative;
-      z-index: 10;
-      text-align: center;
-    }
-
-    .builders-title {
-      font-family: 'Russo One', sans-serif;
-      font-size: clamp(18px, 4vw, 32px);
-      font-weight: 400;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-      text-shadow: 0 0 20px rgba(255,255,255,0.3);
-    }
-
-    .builders-subtitle {
-      font-size: clamp(14px, 2vw, 18px);
-      color: rgba(255,255,255,0.7);
-      font-style: italic;
-      margin-bottom: 40px;
-    }
-
-    /* Network Scene */
-    .network-scene {
-      position: relative;
-      width: 100%;
-      max-width: 800px;
-      height: 350px;
-      margin: 0 auto;
-      overflow: hidden;
-    }
-
-    .mountain-silhouette {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 100%;
-    }
-
-    .network-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 5;
-    }
-
-    /* ==================== CTA SECTION ==================== */
-    .cta-section {
-      padding: 60px 20px;
-      background: linear-gradient(180deg, #0a0018 0%, #12002a 100%);
-      position: relative;
-      z-index: 10;
-      text-align: center;
-    }
-
-    .cta-title-wrap {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-      margin-bottom: 12px;
-    }
-
-    .cta-line {
-      width: 40px;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, #ff00aa);
-    }
-
-    .cta-line:last-child {
-      background: linear-gradient(90deg, #ff00aa, transparent);
-    }
-
-    .cta-title {
-      font-family: 'Russo One', sans-serif;
-      font-size: clamp(20px, 4vw, 34px);
-      font-weight: 400;
-      text-transform: uppercase;
-    }
-
-    .cta-subtitle {
-      font-size: clamp(14px, 2vw, 16px);
-      color: rgba(255,255,255,0.7);
-      margin-bottom: 30px;
-    }
-
-    .cta-buttons-bottom {
-      display: flex;
-      gap: 15px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn-cta-primary {
-      font-family: 'Orbitron', sans-serif;
+    .footer {
+      position: fixed;
+      bottom: 20px;
       font-size: 11px;
-      font-weight: 700;
-      padding: 14px 28px;
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      background: linear-gradient(90deg, #0066ff, #00aaff);
-      color: white;
-      border: none;
-      box-shadow: 0 0 20px rgba(0,150,255,0.5);
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .btn-cta-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 30px rgba(0,150,255,0.7);
-    }
-
-    .btn-cta-secondary {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 14px 28px;
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      background: transparent;
-      color: #ffffff;
-      border: 1px solid rgba(255,255,255,0.5);
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .btn-cta-secondary:hover {
-      background: rgba(255,255,255,0.1);
-    }
-
-    /* ==================== FOOTER ==================== */
-    footer {
-      padding: 25px 20px;
-      background: #050010;
-      text-align: center;
-      position: relative;
-      z-index: 10;
-      border-top: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .footer-content {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 10px;
       letter-spacing: 2px;
+      color: rgba(255,255,255,0.4);
       text-transform: uppercase;
-      color: rgba(255,255,255,0.5);
-    }
-
-    .footer-content span {
-      margin: 0 8px;
-    }
-
-    /* ==================== RESPONSIVE ==================== */
-    @media (max-width: 768px) {
-      .synthwave-scene {
-        height: 300px;
-      }
-
-      .sun {
-        bottom: 140px;
-      }
-
-      .mountains-container {
-        bottom: 100px;
-        height: 150px;
-      }
-
-      .castle-container {
-        display: none;
-      }
-
-      .grid-floor {
-        height: 140px;
-      }
-
-      .network-scene {
-        height: 280px;
-      }
+      z-index: 10;
     }
   </style>
 </head>
-
 <body>
-  <!-- Stars Background -->
-  <div class="stars-container" id="stars"></div>
-
-  <!-- ==================== HERO SECTION ==================== -->
-  <section class="hero">
-    <div class="top-badge">
-      <span class="badge-line"></span>
-      GOSLAR / HARZ • DIGITAL FORGE
-      <span class="badge-line"></span>
-    </div>
-    
-    <h1 class="logo-main">ZabelTech</h1>
-    
-    <h2 class="tagline">Neon-Brutal IT Architecture.</h2>
-    <p class="subtitle">Deep. Connected. Load-bearing – like the Rammelsberg tunnels.</p>
-    
-    <div class="cta-buttons">
-      <a href="#contact" class="btn btn-primary">Book a Call</a>
-      <a href="#services" class="btn btn-secondary">Architecture Check</a>
-    </div>
-
-    <!-- Synthwave Scene -->
-    <div class="synthwave-scene">
-      <!-- Sun -->
-      <div class="sun"></div>
-      
-      <!-- Wireframe Mountains -->
-      <div class="mountains-container">
-        <svg class="mountains-svg" viewBox="0 0 1200 200" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="wireGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stop-color="#00ffff" stop-opacity="0.9"/>
-              <stop offset="50%" stop-color="#ff00ff" stop-opacity="0.7"/>
-              <stop offset="100%" stop-color="#8000ff" stop-opacity="0.4"/>
-            </linearGradient>
-            <filter id="glow1">
-              <feGaussianBlur stdDeviation="2" result="blur"/>
-              <feMerge>
-                <feMergeNode in="blur"/>
-                <feMergeNode in="SourceGraphic"/>
-              </feMerge>
-            </filter>
-          </defs>
-          
-          <g stroke="url(#wireGrad)" stroke-width="1.5" fill="none" filter="url(#glow1)">
-            <!-- Main mountain peaks -->
-            <polyline points="0,200 80,140 160,170 280,80 400,130 520,60 640,110 760,50 880,100 1000,70 1120,120 1200,90"/>
-            <polyline points="0,200 100,150 200,180 340,100 480,150 600,90 720,140 840,80 960,130 1080,100 1200,140"/>
-            <polyline points="0,200 120,160 240,185 380,120 500,160 620,110 740,155 860,100 980,145 1100,115 1200,160"/>
-            
-            <!-- Vertical grid lines on mountains -->
-            <line x1="160" y1="200" x2="280" y2="80"/>
-            <line x1="320" y1="200" x2="400" y2="130"/>
-            <line x1="480" y1="200" x2="520" y2="60"/>
-            <line x1="640" y1="200" x2="640" y2="110"/>
-            <line x1="800" y1="200" x2="760" y2="50"/>
-            <line x1="960" y1="200" x2="880" y2="100"/>
-            <line x1="1080" y1="200" x2="1000" y2="70"/>
-            
-            <!-- Cross lines -->
-            <line x1="200" y1="150" x2="360" y2="110" opacity="0.5"/>
-            <line x1="440" y1="140" x2="560" y2="85" opacity="0.5"/>
-            <line x1="680" y1="120" x2="800" y2="70" opacity="0.5"/>
-            <line x1="900" y1="110" x2="1040" y2="85" opacity="0.5"/>
-          </g>
-          
-          <!-- Glowing nodes at peaks -->
-          <g fill="#00ffff" filter="url(#glow1)">
-            <circle cx="280" cy="80" r="4"/>
-            <circle cx="520" cy="60" r="4"/>
-            <circle cx="760" cy="50" r="5"/>
-            <circle cx="1000" cy="70" r="4"/>
-          </g>
-        </svg>
-      </div>
-
-      <!-- Castle Silhouette -->
-      <div class="castle-container">
-        <svg viewBox="0 0 200 160" preserveAspectRatio="xMidYMax meet">
-          <defs>
-            <linearGradient id="castleGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stop-color="#1a0030"/>
-              <stop offset="100%" stop-color="#0a0015"/>
-            </linearGradient>
-          </defs>
-          <!-- Castle shape -->
-          <path fill="url(#castleGrad)" d="
-            M0,160 L0,120 L15,120 L15,105 L25,105 L25,120 L40,120 L40,90 L50,80 L60,90 L60,120
-            L75,120 L75,70 L85,55 L95,70 L95,120
-            L110,120 L110,60 L120,45 L130,60 L130,120
-            L145,120 L145,75 L155,65 L165,75 L165,120
-            L180,120 L180,100 L188,95 L196,100 L196,160 Z
-          "/>
-          <!-- Windows with warm glow -->
-          <g fill="rgba(255,180,100,0.4)">
-            <rect x="48" y="95" width="6" height="10" rx="1"/>
-            <rect x="83" y="75" width="7" height="12" rx="1"/>
-            <rect x="118" y="70" width="7" height="12" rx="1"/>
-            <rect x="153" y="85" width="6" height="10" rx="1"/>
-          </g>
-        </svg>
-      </div>
-
-      <!-- Grid Floor -->
-      <div class="grid-floor"></div>
-    </div>
-  </section>
-
-  <!-- ==================== SERVICE STRIP ==================== -->
-  <div class="service-strip">
-    <div class="strip-content">
-      <span>Strategy</span>
-      <span class="strip-dot">•</span>
-      <span>Performance</span>
-      <span class="strip-dot">•</span>
-      <span>Security</span>
-      <span class="strip-dot">•</span>
-      <span>Delivery</span>
-      <span class="strip-dot">•</span>
-      <span>No Slide Magic</span>
-    </div>
+  <div class="stars" id="stars"></div>
+  
+  <div class="content">
+    <div class="badge">Goslar / Harz • Digital Forge</div>
+    <h1 class="logo">ZabelTech</h1>
+    <p class="tagline">Neon-Brutal IT Architecture</p>
+    <p class="coming-soon">Coming Soon</p>
   </div>
 
-  <!-- ==================== SERVICES SECTION ==================== -->
-  <section class="services" id="services">
-    <div class="services-grid">
-      <!-- Card 1: Platform & Cloud -->
-      <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-          </svg>
-        </div>
-        <h3>Platform & Cloud Architecture</h3>
-        <p>Foundations before façades.</p>
-      </div>
+  <div class="sun"></div>
+  <div class="grid"></div>
 
-      <!-- Card 2: Performance -->
-      <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z"/>
-            <path d="M21 18H3v2h18z" opacity="0.5"/>
-          </svg>
-        </div>
-        <h3>Performance Engineering</h3>
-        <p>Eliminate bottlenecks.</p>
-      </div>
-
-      <!-- Card 3: Security -->
-      <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
-          </svg>
-        </div>
-        <h3>Security & Governance</h3>
-        <p>Order in the system.</p>
-      </div>
-
-      <!-- Card 4: Engineering & Delivery -->
-      <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
-            <circle cx="17" cy="17" r="3" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
-            <line x1="15" y1="7" x2="19" y2="7" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
-            <line x1="17" y1="5" x2="17" y2="9" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
-          </svg>
-        </div>
-        <h3>Engineering & Delivery</h3>
-        <p>Ship migrations.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== BUILDERS SECTION ==================== -->
-  <section class="builders" id="approach">
-    <h2 class="builders-title">Build like Master Builders. Think like Miners.</h2>
-    <p class="builders-subtitle">High-tech with long-range experience from Goslar.</p>
-    
-    <div class="network-scene">
-      <!-- Mountain Background -->
-      <svg class="mountain-silhouette" viewBox="0 0 800 350" preserveAspectRatio="xMidYMax slice">
-        <defs>
-          <linearGradient id="skyGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#12002a"/>
-            <stop offset="100%" stop-color="#2a0050"/>
-          </linearGradient>
-          <linearGradient id="mt1" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#4a1080"/>
-            <stop offset="100%" stop-color="#200040"/>
-          </linearGradient>
-          <linearGradient id="mt2" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#350060"/>
-            <stop offset="100%" stop-color="#150030"/>
-          </linearGradient>
-          <linearGradient id="mt3" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#250045"/>
-            <stop offset="100%" stop-color="#0a0018"/>
-          </linearGradient>
-          <filter id="starGlow">
-            <feGaussianBlur stdDeviation="1"/>
-          </filter>
-        </defs>
-        
-        <!-- Sky background -->
-        <rect fill="url(#skyGrad2)" width="800" height="350"/>
-        
-        <!-- Stars in sky -->
-        <g fill="white" filter="url(#starGlow)">
-          <circle cx="50" cy="40" r="1"/>
-          <circle cx="120" cy="80" r="0.8"/>
-          <circle cx="200" cy="30" r="1.2"/>
-          <circle cx="280" cy="90" r="0.7"/>
-          <circle cx="350" cy="50" r="1"/>
-          <circle cx="450" cy="70" r="0.9"/>
-          <circle cx="520" cy="25" r="1.1"/>
-          <circle cx="600" cy="85" r="0.8"/>
-          <circle cx="680" cy="45" r="1"/>
-          <circle cx="750" cy="75" r="0.9"/>
-          <circle cx="100" cy="120" r="0.6"/>
-          <circle cx="400" cy="110" r="0.7"/>
-          <circle cx="700" cy="100" r="0.8"/>
-        </g>
-        
-        <!-- Back mountains -->
-        <polygon fill="url(#mt1)" points="0,350 50,250 120,280 200,200 300,250 400,180 500,230 600,170 700,220 800,190 800,350"/>
-        
-        <!-- Middle mountains -->
-        <polygon fill="url(#mt2)" points="0,350 80,270 180,300 280,230 380,280 480,220 580,270 680,210 780,260 800,240 800,350"/>
-        
-        <!-- Front mountains -->
-        <polygon fill="url(#mt3)" points="0,350 100,290 220,320 340,270 460,310 560,260 680,300 800,280 800,350"/>
-        
-        <!-- Trees silhouette -->
-        <g fill="#0a0015">
-          <polygon points="30,350 38,310 46,350"/>
-          <polygon points="55,350 65,300 75,350"/>
-          <polygon points="90,350 100,315 110,350"/>
-          <polygon points="700,350 710,305 720,350"/>
-          <polygon points="730,350 742,295 754,350"/>
-          <polygon points="760,350 772,310 784,350"/>
-        </g>
-      </svg>
-
-      <!-- Network Graph Overlay -->
-      <svg class="network-overlay" viewBox="0 0 800 350" preserveAspectRatio="xMidYMid meet">
-        <defs>
-          <linearGradient id="lineGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#00e5ff"/>
-            <stop offset="50%" stop-color="#ff00ff"/>
-            <stop offset="100%" stop-color="#8000ff"/>
-          </linearGradient>
-          <filter id="nodeGlow2">
-            <feGaussianBlur stdDeviation="3" result="blur"/>
-            <feMerge>
-              <feMergeNode in="blur"/>
-              <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-          </filter>
-        </defs>
-
-        <!-- Connection lines -->
-        <g stroke="url(#lineGrad2)" stroke-width="2.5" fill="none" filter="url(#nodeGlow2)">
-          <path d="M180,200 Q280,150 340,130"/>
-          <path d="M180,200 Q300,220 380,210"/>
-          <path d="M340,130 Q420,100 480,130"/>
-          <path d="M380,210 Q450,180 480,130"/>
-          <path d="M380,210 Q500,220 580,200"/>
-          <path d="M480,130 Q530,160 580,200"/>
-        </g>
-
-        <!-- Nodes -->
-        <g filter="url(#nodeGlow2)">
-          <!-- AUTH -->
-          <rect x="130" y="180" width="100" height="40" rx="6" 
-                fill="rgba(0,100,150,0.4)" stroke="#00e5ff" stroke-width="2"/>
-          <text x="180" y="207" text-anchor="middle" fill="#00e5ff" 
-                font-family="Orbitron" font-size="16" font-weight="bold">AUTH</text>
-          
-          <!-- RISK -->
-          <rect x="290" y="110" width="100" height="40" rx="6" 
-                fill="rgba(150,0,100,0.4)" stroke="#ff00ff" stroke-width="2"/>
-          <text x="340" y="137" text-anchor="middle" fill="#ff00ff" 
-                font-family="Orbitron" font-size="16" font-weight="bold">RISK</text>
-          
-          <!-- INGEST -->
-          <rect x="330" y="190" width="100" height="40" rx="6" 
-                fill="rgba(80,0,150,0.4)" stroke="#aa00ff" stroke-width="2"/>
-          <text x="380" y="217" text-anchor="middle" fill="#cc66ff" 
-                font-family="Orbitron" font-size="16" font-weight="bold">INGEST</text>
-          
-          <!-- BILLING (top) -->
-          <rect x="430" y="110" width="100" height="40" rx="6" 
-                fill="rgba(0,100,150,0.4)" stroke="#00e5ff" stroke-width="2"/>
-          <text x="480" y="137" text-anchor="middle" fill="#00e5ff" 
-                font-family="Orbitron" font-size="16" font-weight="bold">BILLING</text>
-          
-          <!-- BILLING (right) -->
-          <rect x="530" y="180" width="100" height="40" rx="6" 
-                fill="rgba(150,0,100,0.4)" stroke="#ff00ff" stroke-width="2"/>
-          <text x="580" y="207" text-anchor="middle" fill="#ff00ff" 
-                font-family="Orbitron" font-size="16" font-weight="bold">BILLING</text>
-        </g>
-
-        <!-- Glowing connection dots -->
-        <g fill="#ffffff" filter="url(#nodeGlow2)">
-          <circle cx="180" cy="200" r="5"/>
-          <circle cx="340" cy="130" r="5"/>
-          <circle cx="380" cy="210" r="5"/>
-          <circle cx="480" cy="130" r="5"/>
-          <circle cx="580" cy="200" r="5"/>
-        </g>
-      </svg>
-    </div>
-  </section>
-
-  <!-- ==================== CTA SECTION ==================== -->
-  <section class="cta-section" id="contact">
-    <div class="cta-title-wrap">
-      <span class="cta-line"></span>
-      <h2 class="cta-title">Let's Test What Holds.</h2>
-      <span class="cta-line"></span>
-    </div>
-    <p class="cta-subtitle">30 minutes of clarity. Next steps without bullshit.</p>
-    
-    <div class="cta-buttons-bottom">
-      <a href="mailto:hello@zabeltech.de?subject=Book%20a%20Call" class="btn-cta-primary">Book a Call</a>
-      <a href="mailto:hello@zabeltech.de?subject=Send%20a%20Brief" class="btn-cta-secondary">Send a Brief</a>
-    </div>
-  </section>
-
-  <!-- ==================== FOOTER ==================== -->
-  <footer>
-    <div class="footer-content">
-      <span>Digital Forge</span>•<span>Goslar Tech</span>•<span>Built to Endure</span>
-    </div>
-  </footer>
+  <div class="footer">Built to Endure</div>
 
   <script>
-    // Generate random stars
-    function createStars() {
-      const container = document.getElementById('stars');
-      const starCount = 150;
-      
-      for (let i = 0; i < starCount; i++) {
-        const star = document.createElement('div');
-        star.className = 'star';
-        
-        const size = Math.random() * 2 + 0.5;
-        const x = Math.random() * 100;
-        const y = Math.random() * 100;
-        const delay = Math.random() * 3;
-        const duration = Math.random() * 2 + 2;
-        
-        star.style.cssText = `
-          width: ${size}px;
-          height: ${size}px;
-          left: ${x}%;
-          top: ${y}%;
-          animation-delay: ${delay}s;
-          animation-duration: ${duration}s;
-        `;
-        
-        container.appendChild(star);
-      }
+    const container = document.getElementById('stars');
+    for (let i = 0; i < 100; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      star.style.cssText = `
+        width: ${Math.random() * 2 + 0.5}px;
+        height: ${Math.random() * 2 + 0.5}px;
+        left: ${Math.random() * 100}%;
+        top: ${Math.random() * 60}%;
+        animation-delay: ${Math.random() * 3}s;
+        animation-duration: ${Math.random() * 2 + 2}s;
+      `;
+      container.appendChild(star);
     }
-
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    });
-
-    // Initialize
-    createStars();
   </script>
 </body>
 </html>
